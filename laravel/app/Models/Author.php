@@ -4,5 +4,6 @@ use Eloquent;
 
 class Author extends Eloquent
 {
+  protected $fillable = ['name', 'bio'];
   public $table = 'authors';
 }

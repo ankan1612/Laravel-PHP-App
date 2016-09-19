@@ -7,4 +7,5 @@
             <li>{{ Html::linkRoute('author', $author->name, array($author->id)) }}</li>
     @endforeach
   </ul>
+  {{ Html::linkRoute('author_new', 'Create new author')}}
 @endsection

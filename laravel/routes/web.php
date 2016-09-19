@@ -20,4 +20,7 @@ Route::get('/', function () {
 Route::get('authors', ['as'=> 'authors', 'uses'=>'AuthorsController@index']);
 
 Route::get('author/{id}', ['as'=>'author', 'uses'=>'AuthorsController@show']);
-            
+
+Route::get('authors/new', ['as'=>'author_new', 'uses'=>'AuthorsController@new_author']);
+
+Route::post('authors/create', ['as'=>'author_create', 'uses'=>'AuthorsController@create_author']);
