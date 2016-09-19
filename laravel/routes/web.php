@@ -11,6 +11,13 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('authors', ['as'=> 'authors', 'uses'=>'AuthorsController@index']);
+
+Route::get('author/{id}', ['as'=>'author', 'uses'=>'AuthorsController@show']);
+            

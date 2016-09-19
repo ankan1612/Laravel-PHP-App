@@ -14,14 +14,38 @@ class AddAuthors extends Migration
     public function up()
     {
         DB::table('authors')->insert(array(
-            'name'=>'Ankan',
+            'name'=>'Author1',
             'bio'=>'PHP tutorials',
             'created_at'=>date('Y-m-d H:m:s'),
             'updated_at'=>date('Y-m-d H:m:s'),
             ));
         DB::table('authors')->insert(array(
-            'name'=>'Allan',
+            'name'=>'Author2',
             'bio'=>'Bio tutorials',
+            'created_at'=>date('Y-m-d H:m:s'),
+            'updated_at'=>date('Y-m-d H:m:s'),
+            ));
+        DB::table('authors')->insert(array(
+            'name'=>'Author3',
+            'bio'=>'Java tutorials',
+            'created_at'=>date('Y-m-d H:m:s'),
+            'updated_at'=>date('Y-m-d H:m:s'),
+            ));
+        DB::table('authors')->insert(array(
+            'name'=>'Author4',
+            'bio'=>'Chem tutorials',
+            'created_at'=>date('Y-m-d H:m:s'),
+            'updated_at'=>date('Y-m-d H:m:s'),
+            ));
+        DB::table('authors')->insert(array(
+            'name'=>'Author5',
+            'bio'=>'C# tutorials',
+            'created_at'=>date('Y-m-d H:m:s'),
+            'updated_at'=>date('Y-m-d H:m:s'),
+            ));
+        DB::table('authors')->insert(array(
+            'name'=>'Author6',
+            'bio'=>'C++ tutorials',
             'created_at'=>date('Y-m-d H:m:s'),
             'updated_at'=>date('Y-m-d H:m:s'),
             ));
