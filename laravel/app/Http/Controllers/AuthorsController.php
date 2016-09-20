@@ -29,10 +29,18 @@ class AuthorsController extends Controller
 	}
 	public function create_author()
 	{
-	  Author::create([
-				'name' => Input::get('name'),
-				'bio' => Input::get('bio')
-		]);
-		return Redirect::to('authors')->with('message','Author was added successfully!!');
+		$validation = Author::validate(Input::all());
+		if($validation->fails())
+		{
+			return Redirect::route('author_new')->withErrors($validation)->withInput();
+		}
+		else
+		{
+			Author::create([
+					'name' => Input::get('name'),
+					'bio' => Input::get('bio')
+			]);
+			return Redirect::route('authors')->with('message','Author was added successfully!!');
+		}
 	}
 }
