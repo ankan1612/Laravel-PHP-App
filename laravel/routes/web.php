@@ -24,3 +24,7 @@ Route::get('author/{id}', ['as'=>'author', 'uses'=>'AuthorsController@show']);
 Route::get('authors/new', ['as'=>'author_new', 'uses'=>'AuthorsController@new_author']);
 
 Route::post('authors/create', ['as'=>'author_create', 'uses'=>'AuthorsController@create_author']);
+
+Route::get('author/{id}/edit',['as'=>'edit', 'uses'=>'AuthorsController@edit']);
+
+Route::post('authors/update', ['as'=>'author_update', 'uses'=>'AuthorsController@update_author']);

@@ -43,4 +43,28 @@ class AuthorsController extends Controller
 			return Redirect::route('authors')->with('message','Author was added successfully!!');
 		}
 	}
+	public function edit($id)
+	{
+		$view = View::make('authors.edit')->with('title','Edit Author')
+		->with('author', Author::find($id));
+		return $view;
+	}
+	public function update_author()
+	{
+		$id = Input::get('id');
+		$validation = Author::validate(Input::all());
+		if($validation->fails())
+		{
+			return Redirect::route('edit', $id)->withErrors($validation)->withInput();
+		}
+		else
+		{
+			$Author = Author::where('id', $id);
+			$Author->update([
+					'name' => Input::get('name'),
+					'bio' => Input::get('bio')
+			]);
+			return Redirect::route('author', $id)->with('message','Author updated successfully!!');
+		}
+	}
 }
