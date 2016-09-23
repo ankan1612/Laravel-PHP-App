@@ -28,3 +28,5 @@ Route::post('authors/create', ['as'=>'author_create', 'uses'=>'AuthorsController
 Route::get('author/{id}/edit',['as'=>'edit', 'uses'=>'AuthorsController@edit']);
 
 Route::post('authors/update', ['as'=>'author_update', 'uses'=>'AuthorsController@update_author']);
+
+Route::delete('author/delete' , ['uses'=>'AuthorsController@delete_author']);

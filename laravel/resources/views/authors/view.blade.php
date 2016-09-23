@@ -3,5 +3,11 @@
 @section('content')
         <h1> {{ $author->name }} </h1>
         <p> {{ $author->bio }} </p>
-        {{  Html::linkRoute('edit', 'Edit author details', [$author->id]) }}
+        <span>
+            {{  Html::linkRoute('edit', 'Edit author details', [$author->id]) }} | 
+            {{ Form::open(['url'=>'author/delete', 'method' => 'DELETE', 'style'=>'display:inline-block']) }}
+            {{ Form::hidden('id',$author->id) }}
+            {{ Form::submit('Delete Author') }}
+            {{ Form::close() }}
+       </span>
 @endsection

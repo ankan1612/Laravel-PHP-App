@@ -64,7 +64,14 @@ class AuthorsController extends Controller
 					'name' => Input::get('name'),
 					'bio' => Input::get('bio')
 			]);
-			return Redirect::route('author', $id)->with('message','Author updated successfully!!');
+			return Redirect::route('author', $id)->with('message','Author was successfully!!');
 		}
+	}
+	public function delete_author()
+	{
+		$Author = Author::find(Input::get('id'));
+		$author_name = $Author->name;
+		$Author->delete();
+		return Redirect::route('authors')->with('message', $author_name.' was deleted successfully!!');
 	}
 }
