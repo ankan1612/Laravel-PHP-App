@@ -23,10 +23,10 @@ Route::get('author/{id}', ['as'=>'author', 'uses'=>'AuthorsController@show']);
 
 Route::get('authors/new', ['as'=>'author_new', 'uses'=>'AuthorsController@new_author']);
 
-Route::post('authors/create', ['as'=>'author_create', 'uses'=>'AuthorsController@create_author']);
+Route::post('authors/create', ['before'=>'csrf', 'as'=>'author_create', 'uses'=>'AuthorsController@create_author']);
 
 Route::get('author/{id}/edit',['as'=>'edit', 'uses'=>'AuthorsController@edit']);
 
-Route::post('authors/update', ['as'=>'author_update', 'uses'=>'AuthorsController@update_author']);
+Route::post('authors/update', ['before'=>'csrf', 'as'=>'author_update', 'uses'=>'AuthorsController@update_author']);
 
-Route::delete('author/delete' , ['uses'=>'AuthorsController@delete_author']);
+Route::delete('author/delete' , ['before'=>'csrf', 'uses'=>'AuthorsController@delete_author']);
